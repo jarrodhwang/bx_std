@@ -121,12 +121,20 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Bin.cpp" />
+    <ClCompile Include="Box.cpp" />
     <ClCompile Include="MainForm.cpp" />
+    <ClCompile Include="Product.cpp" />
+    <ClCompile Include="User.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Bin.h" />
+    <ClInclude Include="Box.h" />
     <ClInclude Include="MainForm.h">
       <FileType>CppForm</FileType>
     </ClInclude>
+    <ClInclude Include="Product.h" />
+    <ClInclude Include="User.h" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="MainForm.resx">

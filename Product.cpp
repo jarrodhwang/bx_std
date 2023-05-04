@@ -5,14 +5,20 @@ Product::Product()
 {
 }
 
-Product::Product(const string& p_name, const int& std_stk, const int& crt_stk, const int& wrn_stk, const double& per_w, const double& error, const Unit& unit)
+Product::Product(const string& p_name,
+				const int& std_stk, 
+				const int& crt_stk, 
+				const int& wrn_stk, 
+				const double& per_w, 
+				const double& error, 
+				const Unit& unit)
 {
 	this->product_name = p_name;
 	this->standard_stock = std_stk;
 	this->current_stock = crt_stk;
 	this->warning_stock = wrn_stk;
 	this->per_weight = per_w;
-	this->error_percentage = error;
+	this->tolerance = error;
 	this->unit = unit;
 }
 
@@ -48,9 +54,9 @@ double Product::getPerWeight() const
 	return this->per_weight;
 }
 
-double Product::getErrorPercentage() const
+double Product::getTolerance() const
 {
-	return this->error_percentage;
+	return this->tolerance;
 }
 
 Product::Unit Product::getUnitType() const
@@ -113,9 +119,9 @@ bool Product::setPerWeight(const double& per_w)
 		return false;
 }
 
-bool Product::setErrorPercentage(const double& error) 
+bool Product::setTolerance(const double& error) 
 {
-	this->error_percentage = error;
+	this->tolerance = error;
 	return true;
 }
 

@@ -28,7 +28,7 @@ bool User::setName(const string& in_name)
 
 bool User::setPhoneNum( char in_pn[])
 {
-	if (isPhoneNum(in_pn))
+	if (IsPhoneNum(in_pn))
 	{
 		this->phone_num = in_pn;
 		return true;
@@ -39,7 +39,7 @@ bool User::setPhoneNum( char in_pn[])
 
 bool User::setEmail(const string& in_em) 
 {
-	if (isEmailAddr(in_em))
+	if (IsEmailAddr(in_em))
 	{
 		this->email_adrr = in_em;
 		return true;
@@ -54,13 +54,13 @@ bool User::setEmail(const string& in_em)
 // validation and formatting
 int User::nameLength(const string& in_name) { return in_name.length(); }
 
-bool User::isEmailAddr(const string& in_em)
+bool User::IsEmailAddr(const string& in_em)
 {
 	if (in_em.find("@") != string::npos)	
 		return true;
 }
 
-bool User::isPhoneNum(char* in_pn)
+bool User::IsPhoneNum(char* in_pn)
 {
 	if (strlen(in_pn) > 12)
 		return false;

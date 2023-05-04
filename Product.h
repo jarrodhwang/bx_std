@@ -20,16 +20,14 @@
 using namespace std;
 
 class Product {
-	// 1. 이름
-	// 2. 전화번호
-	// 3. 이메일 주소
+
 private:
 	string product_name;
 	int standard_stock;
 	int current_stock;
 	int warning_stock;
 	double per_weight;
-	double error_percentage;
+	double tolerance;
 	
 	struct Unit
 	{
@@ -52,7 +50,7 @@ public:
 	int getCurrentStock() const;
 	int getWarningStock() const;
 	double getPerWeight() const;
-	double getErrorPercentage() const;
+	double getTolerance() const;
 	Unit getUnitType() const;
 
 
@@ -62,7 +60,7 @@ public:
 	bool setCurrentStock(const int& crt_stk);
 	bool setWarningStock(const int& wrn_stk);
 	bool setPerWeight(const double& per_w);
-	bool setErrorPercentage(const double& error);
+	bool setTolerance(const double& error);
 	bool setUnitType(const Unit& unit);
 
 	//  validation functions

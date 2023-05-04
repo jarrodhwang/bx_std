@@ -47,8 +47,8 @@ class User {
 		// validation and formatting
 
 		int nameLength(const string& in_name);
-		bool isEmailAddr(const string& in_em);
-		bool isPhoneNum(char* in_pn);
+		bool IsEmailAddr(const string& in_em);
+		bool IsPhoneNum(char* in_pn);
 		
 };
 #endif

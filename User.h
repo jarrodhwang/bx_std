@@ -11,6 +11,10 @@
 * Author : Seongjae Hwang, 황성재
 * Date : 03. May. 2023, 2023년 05월 03일
 */
+
+#ifndef USER_H
+#define USER_H
+
 #include <string>
 using namespace std;
 
@@ -20,7 +24,7 @@ class User {
 	// 3. 이메일 주소
 	private: 
 		string name;
-		string phone_num;
+		char* phone_num;
 		string email_adrr;
 
 
@@ -28,24 +32,23 @@ class User {
 		// Constructor
 		User();
 
-		User(const string&, const string&, const string&);
+		User(const string& in_name, char* in_pn, const string& in_em);
 		// Destructor
 		~User();
 		// getter and setter
 		string getName() const;
-		string getPhoneNum() const;
+		char* getPhoneNum() const;
 		string getEmail() const;
 
-		void setName(const string&);
-		void setPhoneNum(const string&);
-		void setEmail(const string&);
+		bool setName(const string& in_name);
+		bool setPhoneNum(char* in_pn);
+		bool setEmail(const string& in_em);
+
 		// validation and formatting
 
-
-		int nameLength(const string&);
-		bool isEmailAddr(const string&);
-		bool isPhoneNum(const string&);
+		int nameLength(const string& in_name);
+		bool isEmailAddr(const string& in_em);
+		bool isPhoneNum(char* in_pn);
 		
-
-
 };
+#endif

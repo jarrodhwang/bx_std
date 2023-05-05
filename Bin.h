@@ -42,6 +42,12 @@ class Bin {
 			bool IsConnected;
 			bool IsLoaded;
 			bool IsUnderSecureStock;
+
+            bool HasIpAddr;
+            bool HasBinID;
+            bool HasBoxID;
+            bool HasUserL;
+            bool HasAlarmCycle;
 		};
 		BinState state;
 
@@ -84,11 +90,17 @@ class Bin {
 		bool setBinState(const BinState& st);
 
 		//  functions
+        bool IsValidIpAddress(const vector<char>& ip);
+        bool IsValidUserList(const vector<user>& userL);
+        bool IsValidProduct(const Product& product);
+        bool IsValidBinID(const int& binID);
+        bool IsValidBoxID(const int& boxID);
+
 		int countBinInventory();
 		void toleranceCalculation();
-		BinState checkBinResponse();
-		BinState checkBinInventoryState();
-		
+
+
+
 
 };
 #endif

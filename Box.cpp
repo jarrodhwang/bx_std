@@ -41,14 +41,14 @@ string Box::getFactoryName() const { return this->factoryName; }
 bool Box::setIpAddress(const vector<char>& ip_addr) {
 
 }
-bool Box::setBinIds(const vector<int>& bin_ids);
-bool Box::setBoxID(const int& boxID);
-bool Box::setFactoryID(const int& facID);
-bool Box::setFactoryName(const string& fac_n);
+bool Box::setBinIds(const vector<int>& bin_ids) {}
+bool Box::setBoxID(const int& boxID) {}
+bool Box::setFactoryID(const int& facID) {}
+bool Box::setFactoryName(const string& fac_n){}
 
 //Functions
-bool Box::IsValidIpAddress(const vector<char>& ip);
-bool Box::AddBin(const int& binID);
-bool Box::AddBins(const vector<int>& binIDs);
-int Box::countBins();
-int Box::findBinID(const int& binID);
+bool Box::IsValidIpAddress(const vector<char>& ip){}
+bool Box::AddBin(const int& binID){}
+bool Box::AddBins(const vector<int>& binIDs){}
+int Box::countBins(){}
+int Box::findBinID(const int& binID){}

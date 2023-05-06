@@ -86,7 +86,7 @@ bool Bin::setBinID(const int& binID)
 {
     if(Bin::IsValidBinID(binID))
     {
-        this->binID = binID
+        this->binID = binID;
         return true;
     }
     else
@@ -108,7 +108,7 @@ bool Bin::setAlarmCycle(const int& alarmCyc)
         this->alarmCycle = alarmCyc;
         return true;
     }
-    catch(Exception exception)
+    catch(exception)
     {
         return false;
     }
@@ -119,7 +119,7 @@ bool Bin::setBinWeight(const double& binW)
         this->binWeight = binW;
         return true;
     }
-    catch(Exception exception)
+    catch(exception)
     {
         return false;
     }
@@ -137,7 +137,7 @@ bool Bin::IsValidIpAddress(const vector<char>& ip)
 {
 
 }
-bool Bin::IsValidUserList(const vector<user>& userL)
+bool Bin::IsValidUserList(const vector<User>& userL)
 {
 
 }

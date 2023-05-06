@@ -37,22 +37,23 @@ class Bin {
 		
 
 
-		struct BinState
-		{
-			bool IsConnected;
-			bool IsLoaded;
-			bool IsUnderSecureStock;
-
-            bool HasIpAddr;
-            bool HasBinID;
-            bool HasBoxID;
-            bool HasUserL;
-            bool HasAlarmCycle;
-		};
-		BinState state;
-
 
 	public:
+
+		struct BinState
+		{
+			bool IsConnected = false;
+			bool IsLoaded = false;
+			bool IsUnderSecureStock = false;
+
+			bool HasIpAddr = false;
+			bool HasBinID = false;
+			bool HasBoxID = false;
+			bool HasUserL = false;
+			bool HasAlarmCycle = false;
+		};
+
+		BinState state;
 
 		// Constructor
 		Bin(const vector<char>& ip_addr,
@@ -91,7 +92,7 @@ class Bin {
 
 		//  functions
         bool IsValidIpAddress(const vector<char>& ip);
-        bool IsValidUserList(const vector<user>& userL);
+        bool IsValidUserList(const vector<User>& userL);
         bool IsValidProduct(const Product& product);
         bool IsValidBinID(const int& binID);
         bool IsValidBoxID(const int& boxID);

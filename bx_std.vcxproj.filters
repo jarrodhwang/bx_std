@@ -36,7 +36,7 @@
     <ClCompile Include="Login.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="IoT.cpp">
+    <ClCompile Include="LoadCell.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -62,7 +62,7 @@
     <ClInclude Include="Login.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="IoT.h">
+    <ClInclude Include="LoadCell.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

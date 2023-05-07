@@ -8,6 +8,8 @@
 #include <thread>
 #include <vector>
 
+using namespace std;
+//[DllImport("user32.dll")]
 
 
 SOCKET LoadCell::connectBin(const string& ip_addr, const int& port, const int& binID)

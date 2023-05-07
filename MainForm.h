@@ -119,7 +119,7 @@ namespace bxstd {
 			this->login_panel->Controls->Add(this->ID_txt);
 			this->login_panel->Controls->Add(this->login_btn);
 			this->login_panel->Controls->Add(this->PW_txt);
-			this->login_panel->Location = System::Drawing::Point(238, 643);
+			this->login_panel->Location = System::Drawing::Point(201, 613);
 			this->login_panel->Name = L"login_panel";
 			this->login_panel->Size = System::Drawing::Size(187, 118);
 			this->login_panel->TabIndex = 3;
@@ -224,7 +224,7 @@ namespace bxstd {
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(2087, 904);
+			this->ClientSize = System::Drawing::Size(2097, 773);
 			this->Controls->Add(this->login_panel);
 			this->Controls->Add(this->panel1);
 			this->Name = L"MainForm";

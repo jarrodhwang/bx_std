@@ -5,7 +5,6 @@
 
 #include <string>
 #include <WinSock2.h>
-#include <thread>
 #include <vector>
 
 using namespace std;

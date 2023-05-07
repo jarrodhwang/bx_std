@@ -27,7 +27,8 @@ using namespace std;
 class Bin {
 
 	private:
-		vector<char> ip_addr;
+		string ip_addr;
+		int port;
 		vector<User> userList;
 		Product product;
 		int binID;
@@ -47,6 +48,7 @@ class Bin {
 			bool IsUnderSecureStock = false;
 
 			bool HasIpAddr = false;
+			bool HasPort = false;
 			bool HasBinID = false;
 			bool HasBoxID = false;
 			bool HasUserL = false;
@@ -56,7 +58,8 @@ class Bin {
 		BinState state;
 
 		// Constructor
-		Bin(const vector<char>& ip_addr,
+		Bin(const string& ip_addr,
+			const int& port,
 			const vector<User>& userL,
 			const Product& product,
 			const int& binID,
@@ -70,7 +73,8 @@ class Bin {
 
 
 		// getter and setter
-		vector<char> getIpAddress() const;
+		string getIpAddress() const;
+		int getPort() const;
 		vector<User> getUserList() const;
 		Product getProduct() const;
 		int getBinID() const;
@@ -81,7 +85,8 @@ class Bin {
 
 
 
-		bool setIpAddress(const vector<char>& ip_addr);
+		bool setIpAddress(const string& ip_addr);
+		bool setPort(const int& port);
 		bool setUserList(const vector<User>& userList);
 		bool setProduct(const Product& product);
 		bool setBinID(const int& binID);
@@ -91,7 +96,7 @@ class Bin {
 		bool setBinState(const BinState& st);
 
 		//  functions
-        bool IsValidIpAddress(const vector<char>& ip);
+        bool IsValidIpAddress(const string& ip);
         bool IsValidUserList(const vector<User>& userL);
         bool IsValidProduct(const Product& product);
         bool IsValidBinID(const int& binID);

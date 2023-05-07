@@ -27,7 +27,8 @@ class Box {
 
 private:
 
-    vector<char> ip_addr;
+    string ip_addr;
+    int port;
     vector<int> bin_ids;
     int boxID;
     int factoryID;
@@ -46,7 +47,8 @@ private:
 public:
     //Constructor
     Box();
-    Box(const vector<char>& ip_addr,
+    Box(const string& ip_addr,
+        const int& port,
         const vector<int>& bin_ids,
         const int& boxID,
         const int& FactoryID,
@@ -54,20 +56,22 @@ public:
     //Destructor
     ~Box();
     //Getter and Setter
-    vector<char> getIpAddress() const;
+    string getIpAddress() const;
+    int getPort() const;
     vector<int> getBinIDs() const;
     int getBoxID() const;
     int getFactoryID() const;
     string getFactoryName() const;
 
-    bool setIpAddress(const vector<char>& ip_addr);
+    bool setIpAddress(const string& ip_addr);
+    bool setPort(const int& port) ;
     bool setBinIds(const vector<int>& bin_ids);
     bool setBoxID(const int& boxID);
     bool setFactoryID(const int& facID);
     bool setFactoryName(const string& fac_n);
 
     //Functions
-    bool IsValidIpAddress(const vector<char>& ip);
+    bool IsValidIpAddress(const string& ip);
     bool AddBin(const int& binID);
     bool AddBins(const vector<int>& binIDs);
     int countBins();

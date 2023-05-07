@@ -13,18 +13,18 @@ using namespace std;
 
 class LoadCell
 {
-private: 
+private:
 
-	static void connectBin();
-	static void sendData();
-	static void receiveData();
+	static SOCKET connectBin(const string& ip_addr, const int& port, const int& binID);
+	static SOCKET sendData(SOCKET connectedSocket, const int& binID);
+	static string receiveData(SOCKET connectedSocket);
 	
 
 public:
 
 	// return double? or CEL, 101, 1...
-	static double getBinWeight( Bin& bin);
-	static double getBoxWeight( Box& box);
+	static double getBinWeight(Bin& bin);
+	static double getBoxWeight(Box& box);
 	static int IsConnected(const vector<char>& ip_addr);
 	static int IsConnected(const vector<char>& ip_addr, const int& binID);
 

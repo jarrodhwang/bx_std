@@ -18,7 +18,8 @@
 
 
 // constructor
-Bin::Bin(const vector<char>& ip_addr,
+Bin::Bin(const string& ip_addr,
+    const int& port,
 	const vector<User>& userL,
 	const Product& product,
 	const int& binID,
@@ -28,6 +29,7 @@ Bin::Bin(const vector<char>& ip_addr,
 {
     //검증 해야함 일단 테스트용
     this->ip_addr = ip_addr;
+    this->port = port;
     this->userList = userL;
     this->product = product;
     this->binID = binID;
@@ -41,7 +43,8 @@ Bin::~Bin(){}
 
 
 // getter and setter
-vector<char> Bin::getIpAddress() const { return this->ip_addr; }
+string Bin::getIpAddress() const { return this->ip_addr; }
+int Bin::getPort() const { return this->port; }
 vector<User> Bin::getUserList() const{ return this->userList; }
 Product Bin::getProduct() const { return this->product;}
 int Bin::getBinID() const { return this->binID;}
@@ -52,7 +55,7 @@ Bin::BinState Bin::getBinState() const { return this->state; }
 
 
 
-bool Bin::setIpAddress(const vector<char>& ip_addr)
+bool Bin::setIpAddress(const string& ip_addr)
 {
     if(IsValidIpAddress(ip_addr))
     {
@@ -61,6 +64,11 @@ bool Bin::setIpAddress(const vector<char>& ip_addr)
     }
     else
         return false;
+}
+bool Bin::setPort(const int& port)
+{
+    this->port = port;
+    return true;
 }
 bool Bin::setUserList(const vector<User>& userList)
 {
@@ -133,24 +141,28 @@ bool Bin::setBinState(const BinState& st)
 
 
 //  functions
-bool Bin::IsValidIpAddress(const vector<char>& ip)
+bool Bin::IsValidIpAddress(const string& ip)
 {
-
+    return true;
 }
 bool Bin::IsValidUserList(const vector<User>& userL)
 {
+    return true;
 
 }
 bool Bin::IsValidProduct(const Product& product)
 {
+    return true;
 
 }
 bool Bin::IsValidBinID(const int& binID)
 {
+    return true;
 
 }
 bool Bin::IsValidBoxID(const int& boxID)
 {
+    return true;
 
 }
 

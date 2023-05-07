@@ -39,16 +39,40 @@ namespace bxstd {
 	private: System::Windows::Forms::TextBox^ ID_txt;
 	private: System::Windows::Forms::TextBox^ PW_txt;
 	private: System::Windows::Forms::Panel^ login_panel;
-	private: System::Windows::Forms::TabControl^ tabControl1;
-	private: System::Windows::Forms::TabPage^ tabPage1;
-	private: System::Windows::Forms::Splitter^ splitter2;
-	private: System::Windows::Forms::Splitter^ splitter1;
-	private: System::Windows::Forms::TabPage^ tabPage2;
-	private: System::Windows::Forms::TabPage^ tabPage3;
-	private: System::Windows::Forms::TabPage^ tabPage4;
+
+
+
+
+
+
+
 	private: System::Windows::Forms::Panel^ panel1;
 	private: System::Windows::Forms::Button^ exit_btn;
 	private: System::Windows::Forms::Button^ logout_btn;
+	private: System::Windows::Forms::ListView^ boxListView;
+	private: System::Windows::Forms::Panel^ box_main_panel;
+	private: System::Windows::Forms::Button^ select_box_btn;
+	private: System::Windows::Forms::DataGridView^ dataGridView1;
+	private: System::Windows::Forms::Panel^ panel2;
+	private: System::Windows::Forms::Label^ text_lastModifed;
+	private: System::Windows::Forms::Button^ refresh;
+	private: System::Windows::Forms::Button^ add_bin;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^ product_name;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^ standard_stock;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^ current_stock;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^ warning_stock;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^ BinID;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^ config;
+	private: System::Windows::Forms::Label^ checked_time;
+	private: System::Windows::Forms::Label^ checked_date;
+
+
+
+
+
+
+
+
 
 
 
@@ -74,20 +98,30 @@ namespace bxstd {
 			this->ID_txt = (gcnew System::Windows::Forms::TextBox());
 			this->PW_txt = (gcnew System::Windows::Forms::TextBox());
 			this->login_panel = (gcnew System::Windows::Forms::Panel());
-			this->tabControl1 = (gcnew System::Windows::Forms::TabControl());
-			this->tabPage1 = (gcnew System::Windows::Forms::TabPage());
-			this->splitter2 = (gcnew System::Windows::Forms::Splitter());
-			this->splitter1 = (gcnew System::Windows::Forms::Splitter());
-			this->tabPage2 = (gcnew System::Windows::Forms::TabPage());
-			this->tabPage3 = (gcnew System::Windows::Forms::TabPage());
-			this->tabPage4 = (gcnew System::Windows::Forms::TabPage());
 			this->panel1 = (gcnew System::Windows::Forms::Panel());
 			this->logout_btn = (gcnew System::Windows::Forms::Button());
 			this->exit_btn = (gcnew System::Windows::Forms::Button());
+			this->boxListView = (gcnew System::Windows::Forms::ListView());
+			this->box_main_panel = (gcnew System::Windows::Forms::Panel());
+			this->select_box_btn = (gcnew System::Windows::Forms::Button());
+			this->dataGridView1 = (gcnew System::Windows::Forms::DataGridView());
+			this->product_name = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->standard_stock = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->current_stock = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->warning_stock = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->BinID = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->config = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->add_bin = (gcnew System::Windows::Forms::Button());
+			this->refresh = (gcnew System::Windows::Forms::Button());
+			this->text_lastModifed = (gcnew System::Windows::Forms::Label());
+			this->panel2 = (gcnew System::Windows::Forms::Panel());
+			this->checked_date = (gcnew System::Windows::Forms::Label());
+			this->checked_time = (gcnew System::Windows::Forms::Label());
 			this->login_panel->SuspendLayout();
-			this->tabControl1->SuspendLayout();
-			this->tabPage1->SuspendLayout();
 			this->panel1->SuspendLayout();
+			this->box_main_panel->SuspendLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->BeginInit();
+			this->panel2->SuspendLayout();
 			this->SuspendLayout();
 			// 
 			// login_btn
@@ -116,6 +150,7 @@ namespace bxstd {
 			// 
 			// login_panel
 			// 
+			this->login_panel->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
 			this->login_panel->Controls->Add(this->ID_txt);
 			this->login_panel->Controls->Add(this->login_btn);
 			this->login_panel->Controls->Add(this->PW_txt);
@@ -124,87 +159,20 @@ namespace bxstd {
 			this->login_panel->Size = System::Drawing::Size(187, 118);
 			this->login_panel->TabIndex = 3;
 			// 
-			// tabControl1
-			// 
-			this->tabControl1->Controls->Add(this->tabPage1);
-			this->tabControl1->Controls->Add(this->tabPage2);
-			this->tabControl1->Controls->Add(this->tabPage3);
-			this->tabControl1->Controls->Add(this->tabPage4);
-			this->tabControl1->Location = System::Drawing::Point(15, 17);
-			this->tabControl1->Name = L"tabControl1";
-			this->tabControl1->SelectedIndex = 0;
-			this->tabControl1->Size = System::Drawing::Size(922, 313);
-			this->tabControl1->TabIndex = 4;
-			// 
-			// tabPage1
-			// 
-			this->tabPage1->Controls->Add(this->splitter2);
-			this->tabPage1->Controls->Add(this->splitter1);
-			this->tabPage1->Location = System::Drawing::Point(4, 22);
-			this->tabPage1->Name = L"tabPage1";
-			this->tabPage1->Padding = System::Windows::Forms::Padding(3);
-			this->tabPage1->Size = System::Drawing::Size(914, 287);
-			this->tabPage1->TabIndex = 0;
-			this->tabPage1->Text = L"tabPage1";
-			this->tabPage1->UseVisualStyleBackColor = true;
-			// 
-			// splitter2
-			// 
-			this->splitter2->Location = System::Drawing::Point(207, 3);
-			this->splitter2->Name = L"splitter2";
-			this->splitter2->Size = System::Drawing::Size(211, 281);
-			this->splitter2->TabIndex = 1;
-			this->splitter2->TabStop = false;
-			// 
-			// splitter1
-			// 
-			this->splitter1->Location = System::Drawing::Point(3, 3);
-			this->splitter1->Name = L"splitter1";
-			this->splitter1->Size = System::Drawing::Size(204, 281);
-			this->splitter1->TabIndex = 0;
-			this->splitter1->TabStop = false;
-			// 
-			// tabPage2
-			// 
-			this->tabPage2->Location = System::Drawing::Point(4, 22);
-			this->tabPage2->Name = L"tabPage2";
-			this->tabPage2->Padding = System::Windows::Forms::Padding(3);
-			this->tabPage2->Size = System::Drawing::Size(914, 287);
-			this->tabPage2->TabIndex = 1;
-			this->tabPage2->Text = L"tabPage2";
-			this->tabPage2->UseVisualStyleBackColor = true;
-			// 
-			// tabPage3
-			// 
-			this->tabPage3->Location = System::Drawing::Point(4, 22);
-			this->tabPage3->Name = L"tabPage3";
-			this->tabPage3->Size = System::Drawing::Size(914, 287);
-			this->tabPage3->TabIndex = 2;
-			this->tabPage3->Text = L"tabPage3";
-			this->tabPage3->UseVisualStyleBackColor = true;
-			// 
-			// tabPage4
-			// 
-			this->tabPage4->Location = System::Drawing::Point(4, 22);
-			this->tabPage4->Name = L"tabPage4";
-			this->tabPage4->Size = System::Drawing::Size(914, 287);
-			this->tabPage4->TabIndex = 3;
-			this->tabPage4->Text = L"tabPage4";
-			this->tabPage4->UseVisualStyleBackColor = true;
-			// 
 			// panel1
 			// 
+			this->panel1->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
+			this->panel1->Controls->Add(this->boxListView);
 			this->panel1->Controls->Add(this->logout_btn);
 			this->panel1->Controls->Add(this->exit_btn);
-			this->panel1->Controls->Add(this->tabControl1);
 			this->panel1->Location = System::Drawing::Point(40, 34);
 			this->panel1->Name = L"panel1";
-			this->panel1->Size = System::Drawing::Size(960, 530);
+			this->panel1->Size = System::Drawing::Size(658, 497);
 			this->panel1->TabIndex = 0;
 			// 
 			// logout_btn
 			// 
-			this->logout_btn->Location = System::Drawing::Point(462, 427);
+			this->logout_btn->Location = System::Drawing::Point(320, 446);
 			this->logout_btn->Name = L"logout_btn";
 			this->logout_btn->Size = System::Drawing::Size(75, 23);
 			this->logout_btn->TabIndex = 5;
@@ -213,27 +181,172 @@ namespace bxstd {
 			// 
 			// exit_btn
 			// 
-			this->exit_btn->Location = System::Drawing::Point(362, 427);
+			this->exit_btn->Location = System::Drawing::Point(239, 446);
 			this->exit_btn->Name = L"exit_btn";
 			this->exit_btn->Size = System::Drawing::Size(75, 23);
 			this->exit_btn->TabIndex = 4;
 			this->exit_btn->Text = L"강제종료";
 			this->exit_btn->UseVisualStyleBackColor = true;
 			// 
+			// boxListView
+			// 
+			this->boxListView->HideSelection = false;
+			this->boxListView->Location = System::Drawing::Point(16, 14);
+			this->boxListView->Name = L"boxListView";
+			this->boxListView->Size = System::Drawing::Size(621, 368);
+			this->boxListView->TabIndex = 6;
+			this->boxListView->UseCompatibleStateImageBehavior = false;
+			// 
+			// box_main_panel
+			// 
+			this->box_main_panel->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
+			this->box_main_panel->Controls->Add(this->panel2);
+			this->box_main_panel->Controls->Add(this->add_bin);
+			this->box_main_panel->Controls->Add(this->dataGridView1);
+			this->box_main_panel->Controls->Add(this->select_box_btn);
+			this->box_main_panel->Location = System::Drawing::Point(716, 34);
+			this->box_main_panel->Name = L"box_main_panel";
+			this->box_main_panel->Size = System::Drawing::Size(971, 497);
+			this->box_main_panel->TabIndex = 7;
+			// 
+			// select_box_btn
+			// 
+			this->select_box_btn->BackColor = System::Drawing::SystemColors::ButtonFace;
+			this->select_box_btn->Location = System::Drawing::Point(3, 3);
+			this->select_box_btn->Name = L"select_box_btn";
+			this->select_box_btn->Size = System::Drawing::Size(180, 48);
+			this->select_box_btn->TabIndex = 0;
+			this->select_box_btn->Text = L"제 1공장 1번 박스";
+			this->select_box_btn->UseVisualStyleBackColor = false;
+			// 
+			// dataGridView1
+			// 
+			this->dataGridView1->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
+			this->dataGridView1->Columns->AddRange(gcnew cli::array< System::Windows::Forms::DataGridViewColumn^  >(6) {
+				this->product_name,
+					this->standard_stock, this->current_stock, this->warning_stock, this->BinID, this->config
+			});
+			this->dataGridView1->Location = System::Drawing::Point(3, 64);
+			this->dataGridView1->Name = L"dataGridView1";
+			this->dataGridView1->Size = System::Drawing::Size(963, 428);
+			this->dataGridView1->TabIndex = 8;
+			// 
+			// product_name
+			// 
+			this->product_name->AutoSizeMode = System::Windows::Forms::DataGridViewAutoSizeColumnMode::Fill;
+			this->product_name->HeaderText = L"제품명";
+			this->product_name->Name = L"product_name";
+			this->product_name->ReadOnly = true;
+			// 
+			// standard_stock
+			// 
+			this->standard_stock->AutoSizeMode = System::Windows::Forms::DataGridViewAutoSizeColumnMode::Fill;
+			this->standard_stock->HeaderText = L"기준 재고";
+			this->standard_stock->Name = L"standard_stock";
+			this->standard_stock->ReadOnly = true;
+			// 
+			// current_stock
+			// 
+			this->current_stock->AutoSizeMode = System::Windows::Forms::DataGridViewAutoSizeColumnMode::Fill;
+			this->current_stock->HeaderText = L"보유 재고";
+			this->current_stock->Name = L"current_stock";
+			this->current_stock->ReadOnly = true;
+			// 
+			// warning_stock
+			// 
+			this->warning_stock->AutoSizeMode = System::Windows::Forms::DataGridViewAutoSizeColumnMode::Fill;
+			this->warning_stock->HeaderText = L"경고 수량";
+			this->warning_stock->Name = L"warning_stock";
+			this->warning_stock->ReadOnly = true;
+			// 
+			// BinID
+			// 
+			this->BinID->AutoSizeMode = System::Windows::Forms::DataGridViewAutoSizeColumnMode::Fill;
+			this->BinID->HeaderText = L"빈 넘버";
+			this->BinID->Name = L"BinID";
+			this->BinID->ReadOnly = true;
+			// 
+			// config
+			// 
+			this->config->AutoSizeMode = System::Windows::Forms::DataGridViewAutoSizeColumnMode::Fill;
+			this->config->HeaderText = L"설정";
+			this->config->Name = L"config";
+			this->config->ReadOnly = true;
+			// 
+			// add_bin
+			// 
+			this->add_bin->Location = System::Drawing::Point(271, 16);
+			this->add_bin->Name = L"add_bin";
+			this->add_bin->Size = System::Drawing::Size(75, 23);
+			this->add_bin->TabIndex = 8;
+			this->add_bin->Text = L"빈 추가";
+			this->add_bin->UseVisualStyleBackColor = true;
+			// 
+			// refresh
+			// 
+			this->refresh->Location = System::Drawing::Point(173, 21);
+			this->refresh->Name = L"refresh";
+			this->refresh->Size = System::Drawing::Size(89, 23);
+			this->refresh->TabIndex = 9;
+			this->refresh->Text = L"다시 불러오기";
+			this->refresh->UseVisualStyleBackColor = true;
+			// 
+			// text_lastModifed
+			// 
+			this->text_lastModifed->AutoSize = true;
+			this->text_lastModifed->Location = System::Drawing::Point(3, 4);
+			this->text_lastModifed->Name = L"text_lastModifed";
+			this->text_lastModifed->Size = System::Drawing::Size(90, 13);
+			this->text_lastModifed->TabIndex = 10;
+			this->text_lastModifed->Text = L"마지막 확인 시간";
+			this->text_lastModifed->Click += gcnew System::EventHandler(this, &MainForm::text_lastModifed_Click);
+			// 
+			// panel2
+			// 
+			this->panel2->Controls->Add(this->checked_time);
+			this->panel2->Controls->Add(this->refresh);
+			this->panel2->Controls->Add(this->checked_date);
+			this->panel2->Controls->Add(this->text_lastModifed);
+			this->panel2->Location = System::Drawing::Point(692, 3);
+			this->panel2->Name = L"panel2";
+			this->panel2->Size = System::Drawing::Size(274, 55);
+			this->panel2->TabIndex = 11;
+			// 
+			// checked_date
+			// 
+			this->checked_date->AutoSize = true;
+			this->checked_date->Location = System::Drawing::Point(5, 21);
+			this->checked_date->Name = L"checked_date";
+			this->checked_date->Size = System::Drawing::Size(94, 13);
+			this->checked_date->TabIndex = 11;
+			this->checked_date->Text = L"2023년 05월 07일";
+			// 
+			// checked_time
+			// 
+			this->checked_time->AutoSize = true;
+			this->checked_time->Location = System::Drawing::Point(6, 37);
+			this->checked_time->Name = L"checked_time";
+			this->checked_time->Size = System::Drawing::Size(49, 13);
+			this->checked_time->TabIndex = 12;
+			this->checked_time->Text = L"16:00:04";
+			// 
 			// MainForm
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(2097, 773);
+			this->ClientSize = System::Drawing::Size(1756, 773);
+			this->Controls->Add(this->box_main_panel);
 			this->Controls->Add(this->login_panel);
 			this->Controls->Add(this->panel1);
 			this->Name = L"MainForm";
 			this->Text = L"MainForm";
 			this->login_panel->ResumeLayout(false);
 			this->login_panel->PerformLayout();
-			this->tabControl1->ResumeLayout(false);
-			this->tabPage1->ResumeLayout(false);
 			this->panel1->ResumeLayout(false);
+			this->box_main_panel->ResumeLayout(false);
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->EndInit();
+			this->panel2->ResumeLayout(false);
+			this->panel2->PerformLayout();
 			this->ResumeLayout(false);
 
 		}
@@ -249,5 +362,7 @@ namespace bxstd {
 	private: System::Void login_btn_Click(System::Object^ sender, System::EventArgs^ e) {
 	}
 
-	};
+	private: System::Void text_lastModifed_Click(System::Object^ sender, System::EventArgs^ e) {
+	}
+};
 }

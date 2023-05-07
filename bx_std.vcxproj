@@ -122,6 +122,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Bin.cpp" />
+    <ClCompile Include="BinConfigForm.cpp" />
     <ClCompile Include="Box.cpp" />
     <ClCompile Include="LoadCell.cpp" />
     <ClCompile Include="Login.cpp" />
@@ -132,6 +133,9 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Bin.h" />
+    <ClInclude Include="BinConfigForm.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
     <ClInclude Include="Box.h" />
     <ClInclude Include="LoadCell.h" />
     <ClInclude Include="Login.h" />

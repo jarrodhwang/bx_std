@@ -79,11 +79,13 @@
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>C:\Program Files\MariaDB 10.11\include\mysql</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
       <EntryPointSymbol>main</EntryPointSymbol>
-      <AdditionalDependencies>ws2_32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>ws2_32.lib;libmariadb.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>C:\Program Files\MariaDB 10.11\lib</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
@@ -124,6 +126,7 @@
     <ClCompile Include="Bin.cpp" />
     <ClCompile Include="BinConfigForm.cpp" />
     <ClCompile Include="Box.cpp" />
+    <ClCompile Include="DBconnector.cpp" />
     <ClCompile Include="LoadCell.cpp" />
     <ClCompile Include="Login.cpp" />
     <ClCompile Include="MainForm.cpp" />
@@ -137,6 +140,7 @@
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="Box.h" />
+    <ClInclude Include="DBconnector.h" />
     <ClInclude Include="LoadCell.h" />
     <ClInclude Include="Login.h" />
     <ClInclude Include="MainForm.h">
@@ -147,9 +151,15 @@
     <ClInclude Include="User.h" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="BinConfigForm.resx">
+      <DependentUpon>BinConfigForm.h</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.h</DependentUpon>
     </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\..\Downloads\source file\bx_std\libmariadb.dll" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

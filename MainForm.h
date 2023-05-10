@@ -57,14 +57,19 @@ namespace bxstd {
 	private: System::Windows::Forms::Label^ text_lastModifed;
 	private: System::Windows::Forms::Button^ refresh;
 	private: System::Windows::Forms::Button^ add_bin;
+
+
+
+
+
+
+	private: System::Windows::Forms::Label^ checked_time;
+	private: System::Windows::Forms::Label^ checked_date;
 	private: System::Windows::Forms::DataGridViewTextBoxColumn^ product_name;
-	private: System::Windows::Forms::DataGridViewTextBoxColumn^ standard_stock;
 	private: System::Windows::Forms::DataGridViewTextBoxColumn^ current_stock;
 	private: System::Windows::Forms::DataGridViewTextBoxColumn^ warning_stock;
 	private: System::Windows::Forms::DataGridViewTextBoxColumn^ BinID;
 	private: System::Windows::Forms::DataGridViewTextBoxColumn^ config;
-	private: System::Windows::Forms::Label^ checked_time;
-	private: System::Windows::Forms::Label^ checked_date;
 
 
 
@@ -99,29 +104,28 @@ namespace bxstd {
 			this->PW_txt = (gcnew System::Windows::Forms::TextBox());
 			this->login_panel = (gcnew System::Windows::Forms::Panel());
 			this->panel1 = (gcnew System::Windows::Forms::Panel());
+			this->boxListView = (gcnew System::Windows::Forms::ListView());
 			this->logout_btn = (gcnew System::Windows::Forms::Button());
 			this->exit_btn = (gcnew System::Windows::Forms::Button());
-			this->boxListView = (gcnew System::Windows::Forms::ListView());
 			this->box_main_panel = (gcnew System::Windows::Forms::Panel());
-			this->select_box_btn = (gcnew System::Windows::Forms::Button());
+			this->panel2 = (gcnew System::Windows::Forms::Panel());
+			this->checked_time = (gcnew System::Windows::Forms::Label());
+			this->refresh = (gcnew System::Windows::Forms::Button());
+			this->checked_date = (gcnew System::Windows::Forms::Label());
+			this->text_lastModifed = (gcnew System::Windows::Forms::Label());
+			this->add_bin = (gcnew System::Windows::Forms::Button());
 			this->dataGridView1 = (gcnew System::Windows::Forms::DataGridView());
+			this->select_box_btn = (gcnew System::Windows::Forms::Button());
 			this->product_name = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			this->standard_stock = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			this->current_stock = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			this->warning_stock = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			this->BinID = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			this->config = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			this->add_bin = (gcnew System::Windows::Forms::Button());
-			this->refresh = (gcnew System::Windows::Forms::Button());
-			this->text_lastModifed = (gcnew System::Windows::Forms::Label());
-			this->panel2 = (gcnew System::Windows::Forms::Panel());
-			this->checked_date = (gcnew System::Windows::Forms::Label());
-			this->checked_time = (gcnew System::Windows::Forms::Label());
 			this->login_panel->SuspendLayout();
 			this->panel1->SuspendLayout();
 			this->box_main_panel->SuspendLayout();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->BeginInit();
 			this->panel2->SuspendLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->BeginInit();
 			this->SuspendLayout();
 			// 
 			// login_btn
@@ -154,7 +158,7 @@ namespace bxstd {
 			this->login_panel->Controls->Add(this->ID_txt);
 			this->login_panel->Controls->Add(this->login_btn);
 			this->login_panel->Controls->Add(this->PW_txt);
-			this->login_panel->Location = System::Drawing::Point(201, 613);
+			this->login_panel->Location = System::Drawing::Point(242, 566);
 			this->login_panel->Name = L"login_panel";
 			this->login_panel->Size = System::Drawing::Size(187, 118);
 			this->login_panel->TabIndex = 3;
@@ -165,10 +169,19 @@ namespace bxstd {
 			this->panel1->Controls->Add(this->boxListView);
 			this->panel1->Controls->Add(this->logout_btn);
 			this->panel1->Controls->Add(this->exit_btn);
-			this->panel1->Location = System::Drawing::Point(40, 34);
+			this->panel1->Location = System::Drawing::Point(33, 34);
 			this->panel1->Name = L"panel1";
 			this->panel1->Size = System::Drawing::Size(658, 497);
 			this->panel1->TabIndex = 0;
+			// 
+			// boxListView
+			// 
+			this->boxListView->HideSelection = false;
+			this->boxListView->Location = System::Drawing::Point(16, 14);
+			this->boxListView->Name = L"boxListView";
+			this->boxListView->Size = System::Drawing::Size(621, 368);
+			this->boxListView->TabIndex = 6;
+			this->boxListView->UseCompatibleStateImageBehavior = false;
 			// 
 			// logout_btn
 			// 
@@ -188,15 +201,6 @@ namespace bxstd {
 			this->exit_btn->Text = L"강제종료";
 			this->exit_btn->UseVisualStyleBackColor = true;
 			// 
-			// boxListView
-			// 
-			this->boxListView->HideSelection = false;
-			this->boxListView->Location = System::Drawing::Point(16, 14);
-			this->boxListView->Name = L"boxListView";
-			this->boxListView->Size = System::Drawing::Size(621, 368);
-			this->boxListView->TabIndex = 6;
-			this->boxListView->UseCompatibleStateImageBehavior = false;
-			// 
 			// box_main_panel
 			// 
 			this->box_main_panel->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
@@ -204,10 +208,79 @@ namespace bxstd {
 			this->box_main_panel->Controls->Add(this->add_bin);
 			this->box_main_panel->Controls->Add(this->dataGridView1);
 			this->box_main_panel->Controls->Add(this->select_box_btn);
-			this->box_main_panel->Location = System::Drawing::Point(716, 34);
+			this->box_main_panel->Location = System::Drawing::Point(732, 34);
 			this->box_main_panel->Name = L"box_main_panel";
 			this->box_main_panel->Size = System::Drawing::Size(971, 497);
 			this->box_main_panel->TabIndex = 7;
+			// 
+			// panel2
+			// 
+			this->panel2->Controls->Add(this->checked_time);
+			this->panel2->Controls->Add(this->refresh);
+			this->panel2->Controls->Add(this->checked_date);
+			this->panel2->Controls->Add(this->text_lastModifed);
+			this->panel2->Location = System::Drawing::Point(692, 3);
+			this->panel2->Name = L"panel2";
+			this->panel2->Size = System::Drawing::Size(274, 55);
+			this->panel2->TabIndex = 11;
+			// 
+			// checked_time
+			// 
+			this->checked_time->AutoSize = true;
+			this->checked_time->Location = System::Drawing::Point(6, 37);
+			this->checked_time->Name = L"checked_time";
+			this->checked_time->Size = System::Drawing::Size(49, 13);
+			this->checked_time->TabIndex = 12;
+			this->checked_time->Text = L"16:00:04";
+			// 
+			// refresh
+			// 
+			this->refresh->Location = System::Drawing::Point(173, 21);
+			this->refresh->Name = L"refresh";
+			this->refresh->Size = System::Drawing::Size(89, 23);
+			this->refresh->TabIndex = 9;
+			this->refresh->Text = L"다시 불러오기";
+			this->refresh->UseVisualStyleBackColor = true;
+			// 
+			// checked_date
+			// 
+			this->checked_date->AutoSize = true;
+			this->checked_date->Location = System::Drawing::Point(5, 21);
+			this->checked_date->Name = L"checked_date";
+			this->checked_date->Size = System::Drawing::Size(94, 13);
+			this->checked_date->TabIndex = 11;
+			this->checked_date->Text = L"2023년 05월 07일";
+			// 
+			// text_lastModifed
+			// 
+			this->text_lastModifed->AutoSize = true;
+			this->text_lastModifed->Location = System::Drawing::Point(3, 4);
+			this->text_lastModifed->Name = L"text_lastModifed";
+			this->text_lastModifed->Size = System::Drawing::Size(90, 13);
+			this->text_lastModifed->TabIndex = 10;
+			this->text_lastModifed->Text = L"마지막 확인 시간";
+			this->text_lastModifed->Click += gcnew System::EventHandler(this, &MainForm::text_lastModifed_Click);
+			// 
+			// add_bin
+			// 
+			this->add_bin->Location = System::Drawing::Point(271, 16);
+			this->add_bin->Name = L"add_bin";
+			this->add_bin->Size = System::Drawing::Size(75, 23);
+			this->add_bin->TabIndex = 8;
+			this->add_bin->Text = L"빈 추가";
+			this->add_bin->UseVisualStyleBackColor = true;
+			// 
+			// dataGridView1
+			// 
+			this->dataGridView1->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
+			this->dataGridView1->Columns->AddRange(gcnew cli::array< System::Windows::Forms::DataGridViewColumn^  >(5) {
+				this->product_name,
+					this->current_stock, this->warning_stock, this->BinID, this->config
+			});
+			this->dataGridView1->Location = System::Drawing::Point(3, 64);
+			this->dataGridView1->Name = L"dataGridView1";
+			this->dataGridView1->Size = System::Drawing::Size(963, 428);
+			this->dataGridView1->TabIndex = 8;
 			// 
 			// select_box_btn
 			// 
@@ -219,31 +292,12 @@ namespace bxstd {
 			this->select_box_btn->Text = L"제 1공장 1번 박스";
 			this->select_box_btn->UseVisualStyleBackColor = false;
 			// 
-			// dataGridView1
-			// 
-			this->dataGridView1->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
-			this->dataGridView1->Columns->AddRange(gcnew cli::array< System::Windows::Forms::DataGridViewColumn^  >(6) {
-				this->product_name,
-					this->standard_stock, this->current_stock, this->warning_stock, this->BinID, this->config
-			});
-			this->dataGridView1->Location = System::Drawing::Point(3, 64);
-			this->dataGridView1->Name = L"dataGridView1";
-			this->dataGridView1->Size = System::Drawing::Size(963, 428);
-			this->dataGridView1->TabIndex = 8;
-			// 
 			// product_name
 			// 
 			this->product_name->AutoSizeMode = System::Windows::Forms::DataGridViewAutoSizeColumnMode::Fill;
 			this->product_name->HeaderText = L"제품명";
 			this->product_name->Name = L"product_name";
 			this->product_name->ReadOnly = true;
-			// 
-			// standard_stock
-			// 
-			this->standard_stock->AutoSizeMode = System::Windows::Forms::DataGridViewAutoSizeColumnMode::Fill;
-			this->standard_stock->HeaderText = L"기준 재고";
-			this->standard_stock->Name = L"standard_stock";
-			this->standard_stock->ReadOnly = true;
 			// 
 			// current_stock
 			// 
@@ -273,80 +327,24 @@ namespace bxstd {
 			this->config->Name = L"config";
 			this->config->ReadOnly = true;
 			// 
-			// add_bin
-			// 
-			this->add_bin->Location = System::Drawing::Point(271, 16);
-			this->add_bin->Name = L"add_bin";
-			this->add_bin->Size = System::Drawing::Size(75, 23);
-			this->add_bin->TabIndex = 8;
-			this->add_bin->Text = L"빈 추가";
-			this->add_bin->UseVisualStyleBackColor = true;
-			// 
-			// refresh
-			// 
-			this->refresh->Location = System::Drawing::Point(173, 21);
-			this->refresh->Name = L"refresh";
-			this->refresh->Size = System::Drawing::Size(89, 23);
-			this->refresh->TabIndex = 9;
-			this->refresh->Text = L"다시 불러오기";
-			this->refresh->UseVisualStyleBackColor = true;
-			// 
-			// text_lastModifed
-			// 
-			this->text_lastModifed->AutoSize = true;
-			this->text_lastModifed->Location = System::Drawing::Point(3, 4);
-			this->text_lastModifed->Name = L"text_lastModifed";
-			this->text_lastModifed->Size = System::Drawing::Size(90, 13);
-			this->text_lastModifed->TabIndex = 10;
-			this->text_lastModifed->Text = L"마지막 확인 시간";
-			this->text_lastModifed->Click += gcnew System::EventHandler(this, &MainForm::text_lastModifed_Click);
-			// 
-			// panel2
-			// 
-			this->panel2->Controls->Add(this->checked_time);
-			this->panel2->Controls->Add(this->refresh);
-			this->panel2->Controls->Add(this->checked_date);
-			this->panel2->Controls->Add(this->text_lastModifed);
-			this->panel2->Location = System::Drawing::Point(692, 3);
-			this->panel2->Name = L"panel2";
-			this->panel2->Size = System::Drawing::Size(274, 55);
-			this->panel2->TabIndex = 11;
-			// 
-			// checked_date
-			// 
-			this->checked_date->AutoSize = true;
-			this->checked_date->Location = System::Drawing::Point(5, 21);
-			this->checked_date->Name = L"checked_date";
-			this->checked_date->Size = System::Drawing::Size(94, 13);
-			this->checked_date->TabIndex = 11;
-			this->checked_date->Text = L"2023년 05월 07일";
-			// 
-			// checked_time
-			// 
-			this->checked_time->AutoSize = true;
-			this->checked_time->Location = System::Drawing::Point(6, 37);
-			this->checked_time->Name = L"checked_time";
-			this->checked_time->Size = System::Drawing::Size(49, 13);
-			this->checked_time->TabIndex = 12;
-			this->checked_time->Text = L"16:00:04";
-			// 
 			// MainForm
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(1756, 773);
+			this->ClientSize = System::Drawing::Size(1736, 722);
 			this->Controls->Add(this->box_main_panel);
 			this->Controls->Add(this->login_panel);
 			this->Controls->Add(this->panel1);
 			this->Name = L"MainForm";
-			this->Text = L"MainForm";
+			this->Text = L"Boxcon Standard";
+			this->Load += gcnew System::EventHandler(this, &MainForm::MainForm_Load);
 			this->login_panel->ResumeLayout(false);
 			this->login_panel->PerformLayout();
 			this->panel1->ResumeLayout(false);
 			this->box_main_panel->ResumeLayout(false);
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->EndInit();
 			this->panel2->ResumeLayout(false);
 			this->panel2->PerformLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->EndInit();
 			this->ResumeLayout(false);
 
 		}
@@ -364,5 +362,7 @@ namespace bxstd {
 
 	private: System::Void text_lastModifed_Click(System::Object^ sender, System::EventArgs^ e) {
 	}
+private: System::Void MainForm_Load(System::Object^ sender, System::EventArgs^ e) {
+}
 };
 }

@@ -48,11 +48,17 @@ namespace bxstd {
 		/// </summary>
 		void InitializeComponent(void)
 		{
-			this->components = gcnew System::ComponentModel::Container();
-			this->Size = System::Drawing::Size(300,300);
-			this->Text = L"BinConfigForm";
-			this->Padding = System::Windows::Forms::Padding(0);
+			this->SuspendLayout();
+			// 
+			// BinConfigForm
+			// 
+			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
+			this->ClientSize = System::Drawing::Size(419, 317);
+			this->Name = L"BinConfigForm";
+			this->Text = L"BinConfigForm";
+			this->ResumeLayout(false);
+
 		}
 #pragma endregion
 	};

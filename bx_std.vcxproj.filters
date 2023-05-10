@@ -42,6 +42,9 @@
     <ClCompile Include="BinConfigForm.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="DBconnector.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="MainForm.h">
@@ -71,5 +74,11 @@
     <ClInclude Include="BinConfigForm.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="DBconnector.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\..\Downloads\source file\bx_std\libmariadb.dll" />
   </ItemGroup>
 </Project>

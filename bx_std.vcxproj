@@ -74,7 +74,9 @@
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
-  <PropertyGroup />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <LibraryPath>C:\Program Files\MariaDB 10.11\lib;$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
@@ -132,6 +134,7 @@
     <ClCompile Include="MainForm.cpp" />
     <ClCompile Include="Monitoring.cpp" />
     <ClCompile Include="Product.cpp" />
+    <ClCompile Include="Scale.cpp" />
     <ClCompile Include="User.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -148,6 +151,7 @@
     </ClInclude>
     <ClInclude Include="Monitoring.h" />
     <ClInclude Include="Product.h" />
+    <ClInclude Include="Scale.h" />
     <ClInclude Include="User.h" />
   </ItemGroup>
   <ItemGroup>
@@ -159,7 +163,7 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <None Include="..\..\..\Downloads\source file\bx_std\libmariadb.dll" />
+    <None Include="libmariadb.dll" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

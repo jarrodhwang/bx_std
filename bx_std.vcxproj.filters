@@ -45,6 +45,9 @@
     <ClCompile Include="DBconnector.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Scale.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="MainForm.h">
@@ -77,8 +80,11 @@
     <ClInclude Include="DBconnector.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Scale.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <None Include="..\..\..\Downloads\source file\bx_std\libmariadb.dll" />
+    <None Include="libmariadb.dll" />
   </ItemGroup>
 </Project>

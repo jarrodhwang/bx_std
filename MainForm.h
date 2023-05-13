@@ -65,14 +65,13 @@ namespace bxstd {
 
 	private: System::Windows::Forms::Label^ checked_time;
 	private: System::Windows::Forms::Label^ checked_date;
-	private: System::Windows::Forms::DataGridViewTextBoxColumn^ product_name;
-	private: System::Windows::Forms::DataGridViewTextBoxColumn^ current_stock;
-	private: System::Windows::Forms::DataGridViewTextBoxColumn^ warning_stock;
-	private: System::Windows::Forms::DataGridViewTextBoxColumn^ BinID;
-	private: System::Windows::Forms::DataGridViewTextBoxColumn^ config;
+
+
+
+
+
 	private: System::Windows::Forms::Panel^ modify_panel;
 	private: System::Windows::Forms::Panel^ product_info_panel;
-	private: System::Windows::Forms::DataGridView^ dataGridView2;
 
 
 
@@ -80,7 +79,8 @@ namespace bxstd {
 
 
 
-	private: System::Windows::Forms::FlowLayoutPanel^ bin_layout_panel;
+
+
 
 
 	private: System::Windows::Forms::Button^ delete_btn;
@@ -111,6 +111,25 @@ namespace bxstd {
 	private: System::Windows::Forms::Label^ crt_stk_label;
 	private: System::Windows::Forms::Label^ product_name_label;
 	private: System::Windows::Forms::TextBox^ product_name_tb;
+	private: System::Windows::Forms::DataGridView^ dataGridView2;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^ product_name;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^ current_stock;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^ warning_stock;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^ BinID;
+	private: System::Windows::Forms::DataGridViewButtonColumn^ config;
+private: System::Windows::Forms::TableLayoutPanel^ tableLayoutPanel1;
+private: System::Windows::Forms::Button^ bin112_btn;
+private: System::Windows::Forms::Button^ bin111_btn;
+private: System::Windows::Forms::Button^ bin110_btn;
+private: System::Windows::Forms::Button^ bin109_btn;
+private: System::Windows::Forms::Button^ bin108_btn;
+private: System::Windows::Forms::Button^ bin107_btn;
+private: System::Windows::Forms::Button^ bin106_btn;
+private: System::Windows::Forms::Button^ bin105_btn;
+private: System::Windows::Forms::Button^ bin104_btn;
+private: System::Windows::Forms::Button^ bin103_btn;
+private: System::Windows::Forms::Button^ bin102_btn;
+private: System::Windows::Forms::Button^ bin101_btn;
 
 
 
@@ -161,18 +180,12 @@ namespace bxstd {
 			this->text_lastModifed = (gcnew System::Windows::Forms::Label());
 			this->dataGridView1 = (gcnew System::Windows::Forms::DataGridView());
 			this->select_box_btn = (gcnew System::Windows::Forms::Button());
-			this->product_name = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			this->current_stock = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			this->warning_stock = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			this->BinID = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			this->config = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			this->modify_panel = (gcnew System::Windows::Forms::Panel());
 			this->select_box_btn2 = (gcnew System::Windows::Forms::Button());
 			this->insert_product_btn = (gcnew System::Windows::Forms::Button());
 			this->save_btn = (gcnew System::Windows::Forms::Button());
 			this->delete_btn = (gcnew System::Windows::Forms::Button());
 			this->product_info_panel = (gcnew System::Windows::Forms::Panel());
-			this->bin_layout_panel = (gcnew System::Windows::Forms::FlowLayoutPanel());
 			this->dataGridView2 = (gcnew System::Windows::Forms::DataGridView());
 			this->user_name = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			this->user_phonenum = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
@@ -196,6 +209,24 @@ namespace bxstd {
 			this->wrn_stk = (gcnew System::Windows::Forms::TextBox());
 			this->product_info_panel2 = (gcnew System::Windows::Forms::Panel());
 			this->product_name_tb = (gcnew System::Windows::Forms::TextBox());
+			this->product_name = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->current_stock = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->warning_stock = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->BinID = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->config = (gcnew System::Windows::Forms::DataGridViewButtonColumn());
+			this->tableLayoutPanel1 = (gcnew System::Windows::Forms::TableLayoutPanel());
+			this->bin101_btn = (gcnew System::Windows::Forms::Button());
+			this->bin102_btn = (gcnew System::Windows::Forms::Button());
+			this->bin103_btn = (gcnew System::Windows::Forms::Button());
+			this->bin104_btn = (gcnew System::Windows::Forms::Button());
+			this->bin105_btn = (gcnew System::Windows::Forms::Button());
+			this->bin106_btn = (gcnew System::Windows::Forms::Button());
+			this->bin107_btn = (gcnew System::Windows::Forms::Button());
+			this->bin108_btn = (gcnew System::Windows::Forms::Button());
+			this->bin109_btn = (gcnew System::Windows::Forms::Button());
+			this->bin110_btn = (gcnew System::Windows::Forms::Button());
+			this->bin111_btn = (gcnew System::Windows::Forms::Button());
+			this->bin112_btn = (gcnew System::Windows::Forms::Button());
 			this->login_panel->SuspendLayout();
 			this->panel1->SuspendLayout();
 			this->box_main_panel->SuspendLayout();
@@ -206,6 +237,7 @@ namespace bxstd {
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView2))->BeginInit();
 			this->product_panel->SuspendLayout();
 			this->product_info_panel2->SuspendLayout();
+			this->tableLayoutPanel1->SuspendLayout();
 			this->SuspendLayout();
 			// 
 			// login_btn
@@ -290,9 +322,9 @@ namespace bxstd {
 			this->box_main_panel->Controls->Add(this->panel2);
 			this->box_main_panel->Controls->Add(this->dataGridView1);
 			this->box_main_panel->Controls->Add(this->select_box_btn);
-			this->box_main_panel->Location = System::Drawing::Point(358, 34);
+			this->box_main_panel->Location = System::Drawing::Point(367, 38);
 			this->box_main_panel->Name = L"box_main_panel";
-			this->box_main_panel->Size = System::Drawing::Size(463, 285);
+			this->box_main_panel->Size = System::Drawing::Size(457, 270);
 			this->box_main_panel->TabIndex = 7;
 			// 
 			// panel2
@@ -302,7 +334,7 @@ namespace bxstd {
 			this->panel2->Controls->Add(this->refresh);
 			this->panel2->Controls->Add(this->checked_date);
 			this->panel2->Controls->Add(this->text_lastModifed);
-			this->panel2->Location = System::Drawing::Point(219, 3);
+			this->panel2->Location = System::Drawing::Point(213, 3);
 			this->panel2->Name = L"panel2";
 			this->panel2->Size = System::Drawing::Size(239, 55);
 			this->panel2->TabIndex = 11;
@@ -359,7 +391,7 @@ namespace bxstd {
 			});
 			this->dataGridView1->Location = System::Drawing::Point(3, 64);
 			this->dataGridView1->Name = L"dataGridView1";
-			this->dataGridView1->Size = System::Drawing::Size(455, 216);
+			this->dataGridView1->Size = System::Drawing::Size(449, 201);
 			this->dataGridView1->TabIndex = 8;
 			// 
 			// select_box_btn
@@ -372,41 +404,6 @@ namespace bxstd {
 			this->select_box_btn->Text = L"제 1공장 1번 박스";
 			this->select_box_btn->UseVisualStyleBackColor = false;
 			// 
-			// product_name
-			// 
-			this->product_name->AutoSizeMode = System::Windows::Forms::DataGridViewAutoSizeColumnMode::Fill;
-			this->product_name->HeaderText = L"제품명";
-			this->product_name->Name = L"product_name";
-			this->product_name->ReadOnly = true;
-			// 
-			// current_stock
-			// 
-			this->current_stock->AutoSizeMode = System::Windows::Forms::DataGridViewAutoSizeColumnMode::Fill;
-			this->current_stock->HeaderText = L"보유 재고";
-			this->current_stock->Name = L"current_stock";
-			this->current_stock->ReadOnly = true;
-			// 
-			// warning_stock
-			// 
-			this->warning_stock->AutoSizeMode = System::Windows::Forms::DataGridViewAutoSizeColumnMode::Fill;
-			this->warning_stock->HeaderText = L"안전 재고";
-			this->warning_stock->Name = L"warning_stock";
-			this->warning_stock->ReadOnly = true;
-			// 
-			// BinID
-			// 
-			this->BinID->AutoSizeMode = System::Windows::Forms::DataGridViewAutoSizeColumnMode::Fill;
-			this->BinID->HeaderText = L"빈 넘버";
-			this->BinID->Name = L"BinID";
-			this->BinID->ReadOnly = true;
-			// 
-			// config
-			// 
-			this->config->AutoSizeMode = System::Windows::Forms::DataGridViewAutoSizeColumnMode::Fill;
-			this->config->HeaderText = L"설정";
-			this->config->Name = L"config";
-			this->config->ReadOnly = true;
-			// 
 			// modify_panel
 			// 
 			this->modify_panel->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
@@ -415,7 +412,7 @@ namespace bxstd {
 			this->modify_panel->Controls->Add(this->save_btn);
 			this->modify_panel->Controls->Add(this->insert_product_btn);
 			this->modify_panel->Controls->Add(this->select_box_btn2);
-			this->modify_panel->Location = System::Drawing::Point(842, 34);
+			this->modify_panel->Location = System::Drawing::Point(853, 34);
 			this->modify_panel->Name = L"modify_panel";
 			this->modify_panel->Size = System::Drawing::Size(630, 388);
 			this->modify_panel->TabIndex = 8;
@@ -463,21 +460,13 @@ namespace bxstd {
 			// product_info_panel
 			// 
 			this->product_info_panel->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
+			this->product_info_panel->Controls->Add(this->tableLayoutPanel1);
 			this->product_info_panel->Controls->Add(this->product_panel);
 			this->product_info_panel->Controls->Add(this->dataGridView2);
-			this->product_info_panel->Controls->Add(this->bin_layout_panel);
 			this->product_info_panel->Location = System::Drawing::Point(3, 57);
 			this->product_info_panel->Name = L"product_info_panel";
 			this->product_info_panel->Size = System::Drawing::Size(622, 326);
 			this->product_info_panel->TabIndex = 9;
-			// 
-			// bin_layout_panel
-			// 
-			this->bin_layout_panel->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
-			this->bin_layout_panel->Location = System::Drawing::Point(322, 6);
-			this->bin_layout_panel->Name = L"bin_layout_panel";
-			this->bin_layout_panel->Size = System::Drawing::Size(295, 184);
-			this->bin_layout_panel->TabIndex = 0;
 			// 
 			// dataGridView2
 			// 
@@ -540,7 +529,7 @@ namespace bxstd {
 			// product_name_label
 			// 
 			this->product_name_label->AutoSize = true;
-			this->product_name_label->Location = System::Drawing::Point(22, 32);
+			this->product_name_label->Location = System::Drawing::Point(29, 32);
 			this->product_name_label->Name = L"product_name_label";
 			this->product_name_label->Size = System::Drawing::Size(40, 13);
 			this->product_name_label->TabIndex = 0;
@@ -660,21 +649,198 @@ namespace bxstd {
 			this->product_info_panel2->Controls->Add(this->unit_label);
 			this->product_info_panel2->Controls->Add(this->count_label2);
 			this->product_info_panel2->Controls->Add(this->count_label3);
-			this->product_info_panel2->Location = System::Drawing::Point(25, 58);
+			this->product_info_panel2->Location = System::Drawing::Point(44, 55);
 			this->product_info_panel2->Name = L"product_info_panel2";
-			this->product_info_panel2->Size = System::Drawing::Size(211, 109);
+			this->product_info_panel2->Size = System::Drawing::Size(206, 106);
 			this->product_info_panel2->TabIndex = 13;
 			// 
 			// product_name_tb
 			// 
-			this->product_name_tb->Location = System::Drawing::Point(77, 29);
+			this->product_name_tb->Location = System::Drawing::Point(84, 29);
 			this->product_name_tb->Name = L"product_name_tb";
-			this->product_name_tb->Size = System::Drawing::Size(112, 20);
+			this->product_name_tb->Size = System::Drawing::Size(120, 20);
 			this->product_name_tb->TabIndex = 13;
+			// 
+			// product_name
+			// 
+			this->product_name->AutoSizeMode = System::Windows::Forms::DataGridViewAutoSizeColumnMode::Fill;
+			this->product_name->HeaderText = L"제품명";
+			this->product_name->Name = L"product_name";
+			this->product_name->ReadOnly = true;
+			// 
+			// current_stock
+			// 
+			this->current_stock->AutoSizeMode = System::Windows::Forms::DataGridViewAutoSizeColumnMode::Fill;
+			this->current_stock->HeaderText = L"보유 재고";
+			this->current_stock->Name = L"current_stock";
+			this->current_stock->ReadOnly = true;
+			// 
+			// warning_stock
+			// 
+			this->warning_stock->AutoSizeMode = System::Windows::Forms::DataGridViewAutoSizeColumnMode::Fill;
+			this->warning_stock->HeaderText = L"안전 재고";
+			this->warning_stock->Name = L"warning_stock";
+			this->warning_stock->ReadOnly = true;
+			// 
+			// BinID
+			// 
+			this->BinID->AutoSizeMode = System::Windows::Forms::DataGridViewAutoSizeColumnMode::Fill;
+			this->BinID->HeaderText = L"빈 넘버";
+			this->BinID->Name = L"BinID";
+			this->BinID->ReadOnly = true;
+			// 
+			// config
+			// 
+			this->config->AutoSizeMode = System::Windows::Forms::DataGridViewAutoSizeColumnMode::Fill;
+			this->config->HeaderText = L"설정";
+			this->config->Name = L"config";
+			this->config->ReadOnly = true;
+			this->config->Resizable = System::Windows::Forms::DataGridViewTriState::True;
+			this->config->SortMode = System::Windows::Forms::DataGridViewColumnSortMode::Automatic;
+			// 
+			// tableLayoutPanel1
+			// 
+			this->tableLayoutPanel1->ColumnCount = 4;
+			this->tableLayoutPanel1->ColumnStyles->Add((gcnew System::Windows::Forms::ColumnStyle(System::Windows::Forms::SizeType::Percent,
+				25)));
+			this->tableLayoutPanel1->ColumnStyles->Add((gcnew System::Windows::Forms::ColumnStyle(System::Windows::Forms::SizeType::Percent,
+				25)));
+			this->tableLayoutPanel1->ColumnStyles->Add((gcnew System::Windows::Forms::ColumnStyle(System::Windows::Forms::SizeType::Percent,
+				25)));
+			this->tableLayoutPanel1->ColumnStyles->Add((gcnew System::Windows::Forms::ColumnStyle(System::Windows::Forms::SizeType::Percent,
+				25)));
+			this->tableLayoutPanel1->Controls->Add(this->bin112_btn, 3, 2);
+			this->tableLayoutPanel1->Controls->Add(this->bin111_btn, 2, 2);
+			this->tableLayoutPanel1->Controls->Add(this->bin110_btn, 1, 2);
+			this->tableLayoutPanel1->Controls->Add(this->bin109_btn, 0, 2);
+			this->tableLayoutPanel1->Controls->Add(this->bin108_btn, 3, 1);
+			this->tableLayoutPanel1->Controls->Add(this->bin107_btn, 2, 1);
+			this->tableLayoutPanel1->Controls->Add(this->bin106_btn, 1, 1);
+			this->tableLayoutPanel1->Controls->Add(this->bin105_btn, 0, 1);
+			this->tableLayoutPanel1->Controls->Add(this->bin104_btn, 3, 0);
+			this->tableLayoutPanel1->Controls->Add(this->bin103_btn, 2, 0);
+			this->tableLayoutPanel1->Controls->Add(this->bin102_btn, 1, 0);
+			this->tableLayoutPanel1->Controls->Add(this->bin101_btn, 0, 0);
+			this->tableLayoutPanel1->Location = System::Drawing::Point(322, 6);
+			this->tableLayoutPanel1->Name = L"tableLayoutPanel1";
+			this->tableLayoutPanel1->RowCount = 3;
+			this->tableLayoutPanel1->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Percent, 33.33333F)));
+			this->tableLayoutPanel1->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Percent, 33.33333F)));
+			this->tableLayoutPanel1->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Percent, 33.33333F)));
+			this->tableLayoutPanel1->Size = System::Drawing::Size(295, 186);
+			this->tableLayoutPanel1->TabIndex = 14;
+			// 
+			// bin101_btn
+			// 
+			this->bin101_btn->Location = System::Drawing::Point(3, 3);
+			this->bin101_btn->Name = L"bin101_btn";
+			this->bin101_btn->Size = System::Drawing::Size(67, 56);
+			this->bin101_btn->TabIndex = 9;
+			this->bin101_btn->Text = L"101";
+			this->bin101_btn->UseVisualStyleBackColor = true;
+			// 
+			// bin102_btn
+			// 
+			this->bin102_btn->Location = System::Drawing::Point(76, 3);
+			this->bin102_btn->Name = L"bin102_btn";
+			this->bin102_btn->Size = System::Drawing::Size(67, 56);
+			this->bin102_btn->TabIndex = 10;
+			this->bin102_btn->Text = L"102";
+			this->bin102_btn->UseVisualStyleBackColor = true;
+			// 
+			// bin103_btn
+			// 
+			this->bin103_btn->Location = System::Drawing::Point(149, 3);
+			this->bin103_btn->Name = L"bin103_btn";
+			this->bin103_btn->Size = System::Drawing::Size(67, 56);
+			this->bin103_btn->TabIndex = 11;
+			this->bin103_btn->Text = L"103";
+			this->bin103_btn->UseVisualStyleBackColor = true;
+			// 
+			// bin104_btn
+			// 
+			this->bin104_btn->Location = System::Drawing::Point(222, 3);
+			this->bin104_btn->Name = L"bin104_btn";
+			this->bin104_btn->Size = System::Drawing::Size(67, 56);
+			this->bin104_btn->TabIndex = 12;
+			this->bin104_btn->Text = L"104";
+			this->bin104_btn->UseVisualStyleBackColor = true;
+			// 
+			// bin105_btn
+			// 
+			this->bin105_btn->Location = System::Drawing::Point(3, 65);
+			this->bin105_btn->Name = L"bin105_btn";
+			this->bin105_btn->Size = System::Drawing::Size(67, 56);
+			this->bin105_btn->TabIndex = 13;
+			this->bin105_btn->Text = L"105";
+			this->bin105_btn->UseVisualStyleBackColor = true;
+			// 
+			// bin106_btn
+			// 
+			this->bin106_btn->Location = System::Drawing::Point(76, 65);
+			this->bin106_btn->Name = L"bin106_btn";
+			this->bin106_btn->Size = System::Drawing::Size(67, 56);
+			this->bin106_btn->TabIndex = 14;
+			this->bin106_btn->Text = L"106";
+			this->bin106_btn->UseVisualStyleBackColor = true;
+			// 
+			// bin107_btn
+			// 
+			this->bin107_btn->Location = System::Drawing::Point(149, 65);
+			this->bin107_btn->Name = L"bin107_btn";
+			this->bin107_btn->Size = System::Drawing::Size(67, 56);
+			this->bin107_btn->TabIndex = 15;
+			this->bin107_btn->Text = L"107";
+			this->bin107_btn->UseVisualStyleBackColor = true;
+			// 
+			// bin108_btn
+			// 
+			this->bin108_btn->Location = System::Drawing::Point(222, 65);
+			this->bin108_btn->Name = L"bin108_btn";
+			this->bin108_btn->Size = System::Drawing::Size(67, 56);
+			this->bin108_btn->TabIndex = 16;
+			this->bin108_btn->Text = L"108";
+			this->bin108_btn->UseVisualStyleBackColor = true;
+			// 
+			// bin109_btn
+			// 
+			this->bin109_btn->Location = System::Drawing::Point(3, 127);
+			this->bin109_btn->Name = L"bin109_btn";
+			this->bin109_btn->Size = System::Drawing::Size(67, 56);
+			this->bin109_btn->TabIndex = 17;
+			this->bin109_btn->Text = L"109";
+			this->bin109_btn->UseVisualStyleBackColor = true;
+			// 
+			// bin110_btn
+			// 
+			this->bin110_btn->Location = System::Drawing::Point(76, 127);
+			this->bin110_btn->Name = L"bin110_btn";
+			this->bin110_btn->Size = System::Drawing::Size(67, 56);
+			this->bin110_btn->TabIndex = 18;
+			this->bin110_btn->Text = L"110";
+			this->bin110_btn->UseVisualStyleBackColor = true;
+			// 
+			// bin111_btn
+			// 
+			this->bin111_btn->Location = System::Drawing::Point(149, 127);
+			this->bin111_btn->Name = L"bin111_btn";
+			this->bin111_btn->Size = System::Drawing::Size(67, 56);
+			this->bin111_btn->TabIndex = 19;
+			this->bin111_btn->Text = L"111";
+			this->bin111_btn->UseVisualStyleBackColor = true;
+			// 
+			// bin112_btn
+			// 
+			this->bin112_btn->Location = System::Drawing::Point(222, 127);
+			this->bin112_btn->Name = L"bin112_btn";
+			this->bin112_btn->Size = System::Drawing::Size(67, 56);
+			this->bin112_btn->TabIndex = 20;
+			this->bin112_btn->Text = L"112";
+			this->bin112_btn->UseVisualStyleBackColor = true;
 			// 
 			// MainForm
 			// 
-			this->ClientSize = System::Drawing::Size(1507, 510);
+			this->ClientSize = System::Drawing::Size(1501, 495);
 			this->Controls->Add(this->modify_panel);
 			this->Controls->Add(this->box_main_panel);
 			this->Controls->Add(this->login_panel);
@@ -696,6 +862,7 @@ namespace bxstd {
 			this->product_panel->PerformLayout();
 			this->product_info_panel2->ResumeLayout(false);
 			this->product_info_panel2->PerformLayout();
+			this->tableLayoutPanel1->ResumeLayout(false);
 			this->ResumeLayout(false);
 
 		}

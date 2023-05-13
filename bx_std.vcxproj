@@ -125,25 +125,31 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Area.cpp" />
     <ClCompile Include="Bin.cpp" />
     <ClCompile Include="BinConfigForm.cpp" />
     <ClCompile Include="Box.cpp" />
+    <ClCompile Include="Company.cpp" />
     <ClCompile Include="DBconnector.cpp" />
+    <ClCompile Include="Factory.cpp" />
     <ClCompile Include="LoadCell.cpp" />
     <ClCompile Include="Login.cpp" />
     <ClCompile Include="MainForm.cpp" />
     <ClCompile Include="Monitoring.cpp" />
     <ClCompile Include="Product.cpp" />
-    <ClCompile Include="Scale.cpp" />
+    <ClCompile Include="Cell.cpp" />
     <ClCompile Include="User.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Area.h" />
     <ClInclude Include="Bin.h" />
     <ClInclude Include="BinConfigForm.h">
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="Box.h" />
+    <ClInclude Include="Company.h" />
     <ClInclude Include="DBconnector.h" />
+    <ClInclude Include="Factory.h" />
     <ClInclude Include="LoadCell.h" />
     <ClInclude Include="Login.h" />
     <ClInclude Include="MainForm.h">
@@ -151,7 +157,7 @@
     </ClInclude>
     <ClInclude Include="Monitoring.h" />
     <ClInclude Include="Product.h" />
-    <ClInclude Include="Scale.h" />
+    <ClInclude Include="Cell.h" />
     <ClInclude Include="User.h" />
   </ItemGroup>
   <ItemGroup>

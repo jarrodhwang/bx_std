@@ -56,7 +56,7 @@ namespace bxstd {
 	private: System::Windows::Forms::Panel^ panel2;
 	private: System::Windows::Forms::Label^ text_lastModifed;
 	private: System::Windows::Forms::Button^ refresh;
-	private: System::Windows::Forms::Button^ add_bin;
+
 
 
 
@@ -70,6 +70,11 @@ namespace bxstd {
 	private: System::Windows::Forms::DataGridViewTextBoxColumn^ warning_stock;
 	private: System::Windows::Forms::DataGridViewTextBoxColumn^ BinID;
 	private: System::Windows::Forms::DataGridViewTextBoxColumn^ config;
+
+
+
+
+
 
 
 
@@ -113,7 +118,6 @@ namespace bxstd {
 			this->refresh = (gcnew System::Windows::Forms::Button());
 			this->checked_date = (gcnew System::Windows::Forms::Label());
 			this->text_lastModifed = (gcnew System::Windows::Forms::Label());
-			this->add_bin = (gcnew System::Windows::Forms::Button());
 			this->dataGridView1 = (gcnew System::Windows::Forms::DataGridView());
 			this->select_box_btn = (gcnew System::Windows::Forms::Button());
 			this->product_name = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
@@ -205,7 +209,6 @@ namespace bxstd {
 			// 
 			this->box_main_panel->BorderStyle = System::Windows::Forms::BorderStyle::FixedSingle;
 			this->box_main_panel->Controls->Add(this->panel2);
-			this->box_main_panel->Controls->Add(this->add_bin);
 			this->box_main_panel->Controls->Add(this->dataGridView1);
 			this->box_main_panel->Controls->Add(this->select_box_btn);
 			this->box_main_panel->Location = System::Drawing::Point(732, 34);
@@ -261,15 +264,6 @@ namespace bxstd {
 			this->text_lastModifed->Text = L"마지막 확인 시간";
 			this->text_lastModifed->Click += gcnew System::EventHandler(this, &MainForm::text_lastModifed_Click);
 			// 
-			// add_bin
-			// 
-			this->add_bin->Location = System::Drawing::Point(271, 16);
-			this->add_bin->Name = L"add_bin";
-			this->add_bin->Size = System::Drawing::Size(75, 23);
-			this->add_bin->TabIndex = 8;
-			this->add_bin->Text = L"빈 추가";
-			this->add_bin->UseVisualStyleBackColor = true;
-			// 
 			// dataGridView1
 			// 
 			this->dataGridView1->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
@@ -309,7 +303,7 @@ namespace bxstd {
 			// warning_stock
 			// 
 			this->warning_stock->AutoSizeMode = System::Windows::Forms::DataGridViewAutoSizeColumnMode::Fill;
-			this->warning_stock->HeaderText = L"경고 수량";
+			this->warning_stock->HeaderText = L"안전 재고";
 			this->warning_stock->Name = L"warning_stock";
 			this->warning_stock->ReadOnly = true;
 			// 
@@ -329,8 +323,6 @@ namespace bxstd {
 			// 
 			// MainForm
 			// 
-			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
-			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->ClientSize = System::Drawing::Size(1736, 722);
 			this->Controls->Add(this->box_main_panel);
 			this->Controls->Add(this->login_panel);

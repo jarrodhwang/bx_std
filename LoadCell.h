@@ -21,7 +21,7 @@ private:
 
 public:
 
-	// return double? or CEL, 101, 1...
+	// return double? or Cell, 101, 1...
 	static double getBinWeight(Bin& bin);
 	static double getBoxWeight(Box& box);
 	static int IsConnected(const vector<char>& ip_addr);

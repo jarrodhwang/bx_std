@@ -53,9 +53,9 @@ SOCKET LoadCell::connectBin(const string& ip_addr, const int& port, const int& b
 SOCKET LoadCell::sendData(SOCKET connectedSocket, const int& binID)
 {
 	// example
-	// send "CEL,101"
-	// return "CEL,101,250"
-	string data = "CEL,";
+	// send "Cell,101"
+	// return "Cell,101,250"
+	string data = "Cell,";
 	data += binID;
 	char* buff = const_cast<char*>(data.c_str());
 	int sendByte = send(connectedSocket, buff, strlen(buff), 0);
@@ -103,7 +103,7 @@ string LoadCell::receiveData(SOCKET connectedSocket)
 
 
 
-// return double? or CEL, 101, 1...
+// return double? or Cell, 101, 1...
 double LoadCell::getBinWeight(Bin& bin)
 {
 	Bin::BinState binst;

@@ -2,9 +2,9 @@
 #pragma once
 #pragma once
 /*
-* Scale.h
+* Cell.h
 *
-* Description : Implementation of Scale class, it contains IoT ID, IP, User object, Product Object, notification cycle
+* Description : Implementation of Cell class, it contains IoT ID, IP, User object, Product Object, notification cycle
 *
 * 설명 : 빈 클래스
 *		보드 아이디, 아이피, 사용자 객체, 제품 객체, 알림 주기 등의 정보를 담고 있음
@@ -13,8 +13,8 @@
 * Date : 03. May. 2023, 2023년 05월 03일
 */
 
-#ifndef SCALE_H
-#define SCALE_H
+#ifndef Cell_H
+#define Cell_H
 
 #include "User.h"
 #include "Product.h"
@@ -24,24 +24,24 @@
 using namespace std;
 
 
-class Scale {
+class Cell {
 
 private:
 	string ip_addr;
 	int port;
 	vector<User> userList;
 	Product product;
-	int ScaleID;
+	int CellID;
 	int boxID;
 	int alarmCycle;
-	double ScaleWeight;
+	double CellWeight;
 
 
 
 
 public:
 
-	struct ScaleState
+	struct CellState
 	{
 		bool IsConnected = false;
 		bool IsLoaded = false;
@@ -49,27 +49,27 @@ public:
 
 		bool HasIpAddr = false;
 		bool HasPort = false;
-		bool HasScaleID = false;
+		bool HasCellID = false;
 		bool HasBoxID = false;
 		bool HasUserL = false;
 		bool HasAlarmCycle = false;
 	};
 
-	ScaleState state;
+	CellState state;
 
 	// Constructor
-	Scale(const string& ip_addr,
+	Cell(const string& ip_addr,
 		const int& port,
 		const vector<User>& userL,
 		const Product& product,
-		const int& ScaleID,
+		const int& CellID,
 		const int& boxID,
 		const int& alarmCyc,
-		const double& ScaleW);
+		const double& CellW);
 
 
 	// Destructor
-	~Scale();
+	~Cell();
 
 
 	// getter and setter
@@ -77,11 +77,11 @@ public:
 	int getPort() const;
 	vector<User> getUserList() const;
 	Product getProduct() const;
-	int getScaleID() const;
+	int getCellID() const;
 	int getBoxID() const;
 	int getAlarmCycle() const;
-	double getScaleWeight() const;
-	ScaleState getScaleState() const;
+	double getCellWeight() const;
+	CellState getCellState() const;
 
 
 
@@ -89,20 +89,20 @@ public:
 	bool setPort(const int& port);
 	bool setUserList(const vector<User>& userList);
 	bool setProduct(const Product& product);
-	bool setScaleID(const int& ScaleID);
+	bool setCellID(const int& CellID);
 	bool setBoxID(const int& boxID);
 	bool setAlarmCycle(const int& alarmCyc);
-	bool setScaleWeight(const double& ScaleW);
-	bool setScaleState(const ScaleState& st);
+	bool setCellWeight(const double& CellW);
+	bool setCellState(const CellState& st);
 
 	//  functions
 	bool IsValidIpAddress(const string& ip);
 	bool IsValidUserList(const vector<User>& userL);
 	bool IsValidProduct(const Product& product);
-	bool IsValidScaleID(const int& ScaleID);
+	bool IsValidCellID(const int& CellID);
 	bool IsValidBoxID(const int& boxID);
 
-	int countScaleInventory();
+	int countCellInventory();
 	void toleranceCalculation();
 
 

@@ -324,7 +324,7 @@ private: System::Windows::Forms::Button^ bin101_btn;
 			this->box_main_panel->Controls->Add(this->select_box_btn);
 			this->box_main_panel->Location = System::Drawing::Point(367, 38);
 			this->box_main_panel->Name = L"box_main_panel";
-			this->box_main_panel->Size = System::Drawing::Size(457, 270);
+			this->box_main_panel->Size = System::Drawing::Size(454, 263);
 			this->box_main_panel->TabIndex = 7;
 			// 
 			// panel2
@@ -334,7 +334,7 @@ private: System::Windows::Forms::Button^ bin101_btn;
 			this->panel2->Controls->Add(this->refresh);
 			this->panel2->Controls->Add(this->checked_date);
 			this->panel2->Controls->Add(this->text_lastModifed);
-			this->panel2->Location = System::Drawing::Point(213, 3);
+			this->panel2->Location = System::Drawing::Point(210, 3);
 			this->panel2->Name = L"panel2";
 			this->panel2->Size = System::Drawing::Size(239, 55);
 			this->panel2->TabIndex = 11;
@@ -391,7 +391,7 @@ private: System::Windows::Forms::Button^ bin101_btn;
 			});
 			this->dataGridView1->Location = System::Drawing::Point(3, 64);
 			this->dataGridView1->Name = L"dataGridView1";
-			this->dataGridView1->Size = System::Drawing::Size(449, 201);
+			this->dataGridView1->Size = System::Drawing::Size(446, 194);
 			this->dataGridView1->TabIndex = 8;
 			// 
 			// select_box_btn
@@ -840,7 +840,7 @@ private: System::Windows::Forms::Button^ bin101_btn;
 			// 
 			// MainForm
 			// 
-			this->ClientSize = System::Drawing::Size(1501, 495);
+			this->ClientSize = System::Drawing::Size(1498, 488);
 			this->Controls->Add(this->modify_panel);
 			this->Controls->Add(this->box_main_panel);
 			this->Controls->Add(this->login_panel);

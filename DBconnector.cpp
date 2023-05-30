@@ -17,7 +17,7 @@ bool DBconnector::execute(const string query)
 }
 
 
-
+//dkarj
 
 
 
